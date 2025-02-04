@@ -16,5 +16,14 @@ namespace Feagin_Asg2_Blackjack
         {
             InitializeComponent();
         }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            // 2 of clubs
+            Card card = new Card(2, Card.CardSuit.Clubs, 4);
+
+            pictureBoxDealer2.Image = imageListCards.Images[card.ImageIndex];
+
+        }
     }
 }
