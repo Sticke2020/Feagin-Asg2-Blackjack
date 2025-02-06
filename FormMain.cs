@@ -22,6 +22,7 @@ namespace Feagin_Asg2_Blackjack
         int dealerWins = 0;
         int dealerTotal = 0;
         int gamesPlayed = 0;
+        int ties = 0;
 
         public FormMain()
         {
@@ -57,7 +58,7 @@ namespace Feagin_Asg2_Blackjack
 
         private void showDealersHand()
         {
-            if (playerTotal > 21)
+            if (playerTotal >= 21)
             {
                 Card card = deck.drawCard();
 
@@ -66,6 +67,7 @@ namespace Feagin_Asg2_Blackjack
                 dealerTotal += card.blackJackValue();
                 labelDealerTotal.Text = dealerTotal.ToString();
                 disableButtons();
+                checkWinner();
             }
         }
 
@@ -76,16 +78,12 @@ namespace Feagin_Asg2_Blackjack
                 labelBust.Text = "BLACKJACK!!!";
                 labelBust.ForeColor = Color.Yellow;
                 hitCount = 20;
-                buttonHit.Enabled = false;
-                checkWinner();
             }
             else if (total > 21)
             {
                 labelBust.Text = "BUST!!!";
                 labelBust.ForeColor = Color.Red;
                 hitCount = 30;
-                buttonHit.Enabled = false;
-                checkWinner();
             }
         }
 
@@ -96,6 +94,11 @@ namespace Feagin_Asg2_Blackjack
             buttonHit.Enabled = true;
             buttonStand.Enabled=true;
             pictureBoxDealer1.Image = imageListCards.Images[52];
+            labelDealerWins.Text = dealerWins.ToString();
+            labelPlayerWins.Text = playerWins.ToString();
+            labelTies.Text = ties.ToString();
+            labelTotalGames.Text = gamesPlayed.ToString();
+            gamesPlayed += 1;
         }
 
         private void checkWinner()
@@ -103,22 +106,27 @@ namespace Feagin_Asg2_Blackjack
             if (playerTotal > 21)
             {
                 labelWinner.Text = "DEALER WINS!!";
+                dealerWins += 1;
             }
             else if (dealerTotal > 21)
             {
                 labelWinner.Text = "YOU WIN!!!";
+                playerWins += 1;
             }
             else if (playerTotal > dealerTotal)
             {
                 labelWinner.Text = "YOU WIN!!!";
+                playerWins += 1;
             }
             else if (playerTotal < dealerTotal)
             {
                 labelWinner.Text = "DEALER WINS!!";
+                dealerWins += 1;
             }
             else
             {
                 labelWinner.Text = "IT'S A TIE!!";
+                ties += 1;
             }
 
         }
@@ -249,13 +257,12 @@ namespace Feagin_Asg2_Blackjack
                 labelDealerTotal.Text = dealerTotal.ToString();
 
                 checkForBust(dealerTotal);
-                checkWinner();
-
+                
                 hitCount += 1;
             }
 
             disableButtons();
-
+            checkWinner();
         }
         
         private void FormMain_Load(object sender, EventArgs e)
