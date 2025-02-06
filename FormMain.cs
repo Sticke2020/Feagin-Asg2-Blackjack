@@ -15,6 +15,9 @@ namespace Feagin_Asg2_Blackjack
     {
         // Deck is global so all methods in FormMain can access the same deck
         Deck deck;
+        List<Card> playerCards = new List<Card>();
+        List<Card> dealerCards = new List<Card>();
+
 
         int hitCount = 1;
         int playerWins = 0;
@@ -23,6 +26,7 @@ namespace Feagin_Asg2_Blackjack
         int dealerTotal = 0;
         int gamesPlayed = 0;
         int ties = 0;
+        
 
         public FormMain()
         {
@@ -50,6 +54,56 @@ namespace Feagin_Asg2_Blackjack
             pictureBoxPlayer8.Visible = false;
         }
 
+        public int valueOfPlayerAce()
+        {
+            int total = 0;
+            int aceCount = 0;
+
+            foreach (Card card in playerCards)
+            {
+                if (card.blackJackValue() == 1)
+                {
+                    aceCount += 1;
+                }
+
+                total = total + card.blackJackValue();
+            }
+            if (aceCount > 0)
+            {
+                if (total >= 7 && total <= 11)
+                {
+                    total = total + 10;
+                }
+            }
+           
+            return total;
+        }
+
+        public int valueOfDealerAce()
+        {
+            int total = 0;
+            int aceCount = 0;
+
+            foreach (Card card in dealerCards)
+            {
+                if (card.blackJackValue() == 1)
+                {
+                    aceCount += 1;
+                }
+
+                total = total + card.blackJackValue();
+            }
+            if (aceCount > 0)
+            {
+                if (total >= 7 && total <= 11)
+                {
+                    total = total + 10;
+                }
+            }
+
+            return total;
+        }
+
         private void disableButtons()
         {
             buttonHit.Enabled = false;
@@ -65,18 +119,21 @@ namespace Feagin_Asg2_Blackjack
                 pictureBoxDealer1.Image = card.FrontImage;
                 pictureBoxDealer1.Visible = true;
                 dealerTotal += card.blackJackValue();
+                dealerCards.Add(card);
+                valueOfDealerAce();
                 labelDealerTotal.Text = dealerTotal.ToString();
+
                 disableButtons();
                 checkWinner();
             }
         }
 
-       private void checkForBust(int total)
+       private void blackJackOrBust(int total)
         {
             if (total == 21)
             {
                 labelBust.Text = "BLACKJACK!!!";
-                labelBust.ForeColor = Color.Yellow;
+                labelBust.ForeColor = Color.Black;
                 hitCount = 20;
             }
             else if (total > 21)
@@ -98,6 +155,8 @@ namespace Feagin_Asg2_Blackjack
             labelPlayerWins.Text = playerWins.ToString();
             labelTies.Text = ties.ToString();
             labelTotalGames.Text = gamesPlayed.ToString();
+            playerCards.Clear();
+            dealerCards.Clear();
             gamesPlayed += 1;
         }
 
@@ -151,16 +210,24 @@ namespace Feagin_Asg2_Blackjack
             pictureBoxPlayer1.Image = card.FrontImage;
             pictureBoxPlayer1.Visible = true;
             playerTotal = card.blackJackValue();
+            playerCards.Add(card);
+            
 
             pictureBoxPlayer2.Image = card2.FrontImage;
             pictureBoxPlayer2.Visible = true;
             playerTotal += card2.blackJackValue();
+            playerCards.Add(card2);
+            playerTotal = valueOfPlayerAce();
+            blackJackOrBust(playerTotal);
+            showDealersHand();
             labelPlayerTotal.Text = playerTotal.ToString();
 
             pictureBoxDealer2.Image = card3.FrontImage;
             pictureBoxDealer2.Visible = true;
             dealerTotal = card3.blackJackValue();
+            dealerCards.Add(card3);
             labelDealerTotal.Text = dealerTotal.ToString();
+           
         }
 
         private void buttonHit_Click(object sender, EventArgs e)
@@ -200,9 +267,11 @@ namespace Feagin_Asg2_Blackjack
                     playerTotal += card.blackJackValue();
                     break;  
             }
+            playerCards.Add(card);
+            playerTotal = valueOfPlayerAce();
             labelPlayerTotal.Text = playerTotal.ToString();
 
-            checkForBust(playerTotal);
+            blackJackOrBust(playerTotal);
             showDealersHand();
 
             hitCount += 1;
@@ -254,9 +323,11 @@ namespace Feagin_Asg2_Blackjack
                         dealerTotal += card.blackJackValue();
                         break;
                 }
+                dealerCards.Add(card);
+                valueOfDealerAce();
                 labelDealerTotal.Text = dealerTotal.ToString();
 
-                checkForBust(dealerTotal);
+                blackJackOrBust(dealerTotal);
                 
                 hitCount += 1;
             }
