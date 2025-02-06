@@ -187,7 +187,6 @@ namespace Feagin_Asg2_Blackjack
                 labelWinner.Text = "IT'S A TIE!!";
                 ties += 1;
             }
-
         }
 
         private void buttonDeal_Click_1(object sender, EventArgs e)
