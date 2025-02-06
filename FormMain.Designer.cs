@@ -47,9 +47,11 @@
             this.pictureBoxPlayer3 = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayer2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayer1 = new System.Windows.Forms.PictureBox();
-            this.buttonTest = new System.Windows.Forms.Button();
+            this.buttonDeal = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonHit = new System.Windows.Forms.Button();
+            this.buttonStand = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer3)).BeginInit();
@@ -131,7 +133,7 @@
             // 
             this.pictureBoxDealer1.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxDealer1.Location = new System.Drawing.Point(28, 32);
-            this.pictureBoxDealer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDealer1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDealer1.Name = "pictureBoxDealer1";
             this.pictureBoxDealer1.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxDealer1.TabIndex = 0;
@@ -141,7 +143,7 @@
             // 
             this.pictureBoxDealer2.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxDealer2.Location = new System.Drawing.Point(90, 32);
-            this.pictureBoxDealer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDealer2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDealer2.Name = "pictureBoxDealer2";
             this.pictureBoxDealer2.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxDealer2.TabIndex = 1;
@@ -151,7 +153,7 @@
             // 
             this.pictureBoxDealer3.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxDealer3.Location = new System.Drawing.Point(152, 32);
-            this.pictureBoxDealer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDealer3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDealer3.Name = "pictureBoxDealer3";
             this.pictureBoxDealer3.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxDealer3.TabIndex = 2;
@@ -161,7 +163,7 @@
             // 
             this.pictureBoxDealer4.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxDealer4.Location = new System.Drawing.Point(213, 32);
-            this.pictureBoxDealer4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDealer4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDealer4.Name = "pictureBoxDealer4";
             this.pictureBoxDealer4.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxDealer4.TabIndex = 3;
@@ -171,7 +173,7 @@
             // 
             this.pictureBoxDealer5.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxDealer5.Location = new System.Drawing.Point(274, 32);
-            this.pictureBoxDealer5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDealer5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDealer5.Name = "pictureBoxDealer5";
             this.pictureBoxDealer5.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxDealer5.TabIndex = 4;
@@ -181,7 +183,7 @@
             // 
             this.pictureBoxDealer6.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxDealer6.Location = new System.Drawing.Point(336, 32);
-            this.pictureBoxDealer6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDealer6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDealer6.Name = "pictureBoxDealer6";
             this.pictureBoxDealer6.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxDealer6.TabIndex = 5;
@@ -191,7 +193,7 @@
             // 
             this.pictureBoxDealer7.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxDealer7.Location = new System.Drawing.Point(398, 32);
-            this.pictureBoxDealer7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDealer7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDealer7.Name = "pictureBoxDealer7";
             this.pictureBoxDealer7.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxDealer7.TabIndex = 6;
@@ -201,7 +203,7 @@
             // 
             this.pictureBoxDealer8.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxDealer8.Location = new System.Drawing.Point(459, 32);
-            this.pictureBoxDealer8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDealer8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDealer8.Name = "pictureBoxDealer8";
             this.pictureBoxDealer8.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxDealer8.TabIndex = 7;
@@ -211,7 +213,7 @@
             // 
             this.pictureBoxPlayer8.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxPlayer8.Location = new System.Drawing.Point(459, 169);
-            this.pictureBoxPlayer8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPlayer8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPlayer8.Name = "pictureBoxPlayer8";
             this.pictureBoxPlayer8.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxPlayer8.TabIndex = 15;
@@ -221,7 +223,7 @@
             // 
             this.pictureBoxPlayer7.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxPlayer7.Location = new System.Drawing.Point(398, 169);
-            this.pictureBoxPlayer7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPlayer7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPlayer7.Name = "pictureBoxPlayer7";
             this.pictureBoxPlayer7.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxPlayer7.TabIndex = 14;
@@ -231,7 +233,7 @@
             // 
             this.pictureBoxPlayer6.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxPlayer6.Location = new System.Drawing.Point(336, 169);
-            this.pictureBoxPlayer6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPlayer6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPlayer6.Name = "pictureBoxPlayer6";
             this.pictureBoxPlayer6.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxPlayer6.TabIndex = 13;
@@ -241,7 +243,7 @@
             // 
             this.pictureBoxPlayer5.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxPlayer5.Location = new System.Drawing.Point(274, 169);
-            this.pictureBoxPlayer5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPlayer5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPlayer5.Name = "pictureBoxPlayer5";
             this.pictureBoxPlayer5.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxPlayer5.TabIndex = 12;
@@ -251,7 +253,7 @@
             // 
             this.pictureBoxPlayer4.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxPlayer4.Location = new System.Drawing.Point(213, 169);
-            this.pictureBoxPlayer4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPlayer4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPlayer4.Name = "pictureBoxPlayer4";
             this.pictureBoxPlayer4.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxPlayer4.TabIndex = 11;
@@ -261,7 +263,7 @@
             // 
             this.pictureBoxPlayer3.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxPlayer3.Location = new System.Drawing.Point(152, 169);
-            this.pictureBoxPlayer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPlayer3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPlayer3.Name = "pictureBoxPlayer3";
             this.pictureBoxPlayer3.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxPlayer3.TabIndex = 10;
@@ -271,7 +273,7 @@
             // 
             this.pictureBoxPlayer2.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxPlayer2.Location = new System.Drawing.Point(90, 169);
-            this.pictureBoxPlayer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPlayer2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPlayer2.Name = "pictureBoxPlayer2";
             this.pictureBoxPlayer2.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxPlayer2.TabIndex = 9;
@@ -281,48 +283,75 @@
             // 
             this.pictureBoxPlayer1.Image = global::Feagin_Asg2_Blackjack.Properties.Resources.Backface_Blue;
             this.pictureBoxPlayer1.Location = new System.Drawing.Point(28, 169);
-            this.pictureBoxPlayer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxPlayer1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPlayer1.Name = "pictureBoxPlayer1";
             this.pictureBoxPlayer1.Size = new System.Drawing.Size(50, 70);
             this.pictureBoxPlayer1.TabIndex = 8;
             this.pictureBoxPlayer1.TabStop = false;
             // 
-            // buttonTest
+            // buttonDeal
             // 
-            this.buttonTest.Location = new System.Drawing.Point(385, 299);
-            this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(124, 52);
-            this.buttonTest.TabIndex = 16;
-            this.buttonTest.Text = "Test";
-            this.buttonTest.UseVisualStyleBackColor = true;
-            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
+            this.buttonDeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeal.Location = new System.Drawing.Point(28, 284);
+            this.buttonDeal.Name = "buttonDeal";
+            this.buttonDeal.Size = new System.Drawing.Size(112, 38);
+            this.buttonDeal.TabIndex = 16;
+            this.buttonDeal.Text = "Deal";
+            this.buttonDeal.UseVisualStyleBackColor = true;
+            this.buttonDeal.Click += new System.EventHandler(this.buttonDeal_Click_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 104);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(149, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 17;
-            this.label1.Text = "label1";
+            this.label1.Text = "Dealer:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 124);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(149, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 18;
-            this.label2.Text = "label2";
+            this.label2.Text = "Player:";
+            // 
+            // buttonHit
+            // 
+            this.buttonHit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHit.Location = new System.Drawing.Point(28, 328);
+            this.buttonHit.Name = "buttonHit";
+            this.buttonHit.Size = new System.Drawing.Size(111, 38);
+            this.buttonHit.TabIndex = 19;
+            this.buttonHit.Text = "Hit";
+            this.buttonHit.UseVisualStyleBackColor = true;
+            this.buttonHit.Click += new System.EventHandler(this.buttonHit_Click);
+            // 
+            // buttonStand
+            // 
+            this.buttonStand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStand.Location = new System.Drawing.Point(27, 371);
+            this.buttonStand.Name = "buttonStand";
+            this.buttonStand.Size = new System.Drawing.Size(112, 38);
+            this.buttonStand.TabIndex = 20;
+            this.buttonStand.Text = "Stand";
+            this.buttonStand.UseVisualStyleBackColor = true;
+            this.buttonStand.Click += new System.EventHandler(this.buttonStand_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 421);
+            this.ClientSize = new System.Drawing.Size(541, 439);
+            this.Controls.Add(this.buttonStand);
+            this.Controls.Add(this.buttonHit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonTest);
+            this.Controls.Add(this.buttonDeal);
             this.Controls.Add(this.pictureBoxPlayer8);
             this.Controls.Add(this.pictureBoxPlayer7);
             this.Controls.Add(this.pictureBoxPlayer6);
@@ -339,9 +368,10 @@
             this.Controls.Add(this.pictureBoxDealer3);
             this.Controls.Add(this.pictureBoxDealer2);
             this.Controls.Add(this.pictureBoxDealer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.Text = "Feagin ASG 2 BlackJack ";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer3)).EndInit();
@@ -382,9 +412,11 @@
         private System.Windows.Forms.PictureBox pictureBoxPlayer3;
         private System.Windows.Forms.PictureBox pictureBoxPlayer2;
         private System.Windows.Forms.PictureBox pictureBoxPlayer1;
-        private System.Windows.Forms.Button buttonTest;
+        private System.Windows.Forms.Button buttonDeal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonHit;
+        private System.Windows.Forms.Button buttonStand;
     }
 }
 

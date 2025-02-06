@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Feagin_Asg2_Blackjack
 {
@@ -12,9 +13,12 @@ namespace Feagin_Asg2_Blackjack
         // Make a list for the cards
         private List<Card> listCards = new List<Card>();
 
+        private ImageList imageList;
 
-        public Deck()
+
+        public Deck(ImageList imageListOfCards)
         {
+            imageList = imageListOfCards;
             loadDeck();
         }
 
@@ -32,19 +36,19 @@ namespace Feagin_Asg2_Blackjack
 
             for (int i = 1; i <= 13; i++)
             {
-                card = new Card(i, Card.CardSuit.Clubs, imageIndex);
+                card = new Card(i, Card.CardSuit.Clubs, imageList.Images[imageIndex]);
                 listCards.Add(card);
                 imageIndex++;
 
-                card = new Card(i, Card.CardSuit.Diamonds, imageIndex);
+                card = new Card(i, Card.CardSuit.Diamonds, imageList.Images[imageIndex]);
                 listCards.Add(card);
                 imageIndex++;
 
-                card = new Card(i, Card.CardSuit.Hearts, imageIndex);
+                card = new Card(i, Card.CardSuit.Hearts, imageList.Images[imageIndex]);
                 listCards.Add(card);
                 imageIndex++;
 
-                card = new Card(i, Card.CardSuit.Spades, imageIndex);
+                card = new Card(i, Card.CardSuit.Spades, imageList.Images[imageIndex]);
                 listCards.Add(card);
                 imageIndex++;
             }

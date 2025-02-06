@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -19,19 +20,18 @@ namespace Feagin_Asg2_Blackjack
 
         public int Rank { get; set; }
 
-        public int ImageIndex { get; set; }
-
+        public Image FrontImage { get; set; }
         
         public Card()
         {
             
         }
 
-        public Card(int rank, CardSuit suit, int imageIndex)
+        public Card(int rank, CardSuit suit, Image frontImage)
         {
             Rank = rank;
             Suit = suit;
-            ImageIndex = imageIndex; 
+            FrontImage = frontImage;
         }
 
         public override string ToString()
@@ -59,9 +59,20 @@ namespace Feagin_Asg2_Blackjack
                 rank = Rank.ToString();
             }
 
-            return rank + " " + Suit.ToString() + " Index: " + ImageIndex.ToString();
+            return rank + " " + Suit.ToString();
         }
 
+        public int blackJackValue()
+        {
+            int value = 10;
+
+            if(Rank >= 1 && Rank <= 9)
+            {
+                value = Rank;
+            }
+            
+            return value;
+        }
 
     }
 }
