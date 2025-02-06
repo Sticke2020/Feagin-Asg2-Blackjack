@@ -61,6 +61,7 @@
             this.labelTies = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.labelBust = new System.Windows.Forms.Label();
+            this.labelWinner = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealer3)).BeginInit();
@@ -437,11 +438,21 @@
             this.labelBust.Size = new System.Drawing.Size(0, 16);
             this.labelBust.TabIndex = 29;
             // 
+            // labelWinner
+            // 
+            this.labelWinner.AutoSize = true;
+            this.labelWinner.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinner.Location = new System.Drawing.Point(152, 252);
+            this.labelWinner.Name = "labelWinner";
+            this.labelWinner.Size = new System.Drawing.Size(0, 16);
+            this.labelWinner.TabIndex = 30;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 439);
+            this.Controls.Add(this.labelWinner);
             this.Controls.Add(this.labelBust);
             this.Controls.Add(this.labelTotalGames);
             this.Controls.Add(this.label8);
@@ -530,6 +541,7 @@
         private System.Windows.Forms.Label labelTies;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelBust;
+        private System.Windows.Forms.Label labelWinner;
     }
 }
 

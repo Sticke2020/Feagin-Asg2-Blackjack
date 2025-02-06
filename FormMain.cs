@@ -55,20 +55,66 @@ namespace Feagin_Asg2_Blackjack
             {
                 labelBust.Text = "BLACKJACK!!!";
                 labelBust.ForeColor = Color.Yellow;
-                hitCount = 10;
+                hitCount = 20;
+                buttonHit.Enabled = false;
             }
             else if (total > 21)
             {
                 labelBust.Text = "BUST!!!";
                 labelBust.ForeColor = Color.Red;
-                hitCount = 10;
+                hitCount = 30;
+                buttonHit.Enabled = false;
             }
         }
 
+        private void resetSpread()
+        {
+            labelBust.Text = "";
+            labelWinner.Text = "";
+            buttonHit.Enabled = true;
+            pictureBoxDealer1.Image = imageListCards.Images[52];
+        }
+
+        private void checkForWinner()
+        {
+            if (hitCount == 20 && playerTotal == 21)
+            {
+                labelWinner.Text = "YOU WIN!!!";
+            }
+            else if (hitCount == 20 && dealerTotal == 21)
+            {
+                labelWinner.Text = "DEALER WINS!!";
+            }
+            else if (hitCount == 30 && playerTotal > 21)
+            {
+                labelWinner.Text = "DEALER WINS!!";
+            }
+            else if (hitCount == 30 && dealerTotal > 21)
+            {
+                labelWinner.Text = "YOU WIN!!!";
+            }
+            else if (dealerTotal == playerTotal)
+            {
+                labelWinner.Text = "IT'S A TIE!!";
+            }
+            else if (hitCount < 10 && dealerTotal > playerTotal && dealerTotal <= 21)
+            {
+                labelWinner.Text = "DEALER WINS!!";
+            }
+            else if (hitCount < 10 && dealerTotal < playerTotal && playerTotal <=21)
+            {
+                labelWinner.Text = "YOU WIN!!!";
+            }
+
+
+
+        }
 
         private void buttonDeal_Click_1(object sender, EventArgs e)
         {
             hidePictureBoxes();
+
+            resetSpread();
 
             hitCount = 1;
 
@@ -79,7 +125,7 @@ namespace Feagin_Asg2_Blackjack
             Card card = deck.drawCard();
             Card card2 = deck.drawCard();
             Card card3 = deck.drawCard();
-            Card card4 = deck.drawCard();
+            
 
             pictureBoxPlayer1.Image = card.FrontImage;
             pictureBoxPlayer1.Visible = true;
@@ -135,7 +181,7 @@ namespace Feagin_Asg2_Blackjack
             }
             labelPlayerTotal.Text = playerTotal.ToString();
 
-            checkForBust(playerTotal);
+            checkForBust(playerTotal);  
 
             hitCount += 1;
         }
@@ -144,10 +190,10 @@ namespace Feagin_Asg2_Blackjack
         {
             hitCount = 1;
 
-            Card card = deck.drawCard();
-
             while (dealerTotal <= 17)
             {
+                Card card = deck.drawCard();
+
                 switch (hitCount)
                 {
                     case 1:
@@ -189,6 +235,7 @@ namespace Feagin_Asg2_Blackjack
                 labelDealerTotal.Text = dealerTotal.ToString();
 
                 checkForBust(dealerTotal);
+                checkForWinner();
 
                 hitCount += 1;
             }
