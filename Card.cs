@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Feagin_Asg2_Blackjack
 {
-    internal class Card
+    public class Card
     {
         // What are some properties of a card
         // Suit  Clubs, Diamonds, Hearts, Spades
