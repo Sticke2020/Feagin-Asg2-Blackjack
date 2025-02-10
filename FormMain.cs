@@ -72,7 +72,7 @@ namespace Feagin_Asg2_Blackjack
                 pictureBoxDealer1.Visible = true;
                 dealerTotal += card.blackJackValue();
                 dealerHand.addCard(card);
-                dealerHand.getBlackJackTotal();
+                dealerTotal = dealerHand.getBlackJackTotal();
                 labelDealerTotal.Text = dealerTotal.ToString();
 
                 disableButtons();
@@ -233,7 +233,7 @@ namespace Feagin_Asg2_Blackjack
         {
             hitCount = 1;
 
-            while (dealerTotal <= 17)
+            while (dealerTotal <= 16)
             {
                 Card card = deck.drawCard();
 
